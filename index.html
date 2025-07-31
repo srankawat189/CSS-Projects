@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            /* prevents horizontal scrolling */
+            background-color: #141414;
+            height: 100vh;
+            position: relative;
+        }
+
+        .circle {
+            width: 50px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background-color: #f4f4f4;
+        }
+
+        .square {
+            width: 200px;
+            aspect-ratio: 1;
+            position: absolute;
+            top: 40%;
+            right: -5%;
+            /* start just outside the right edge */
+            animation: ghostWalk 3s linear infinite;
+            border-radius: 25%;
+            opacity: 0;
+            display: grid;
+            place-items: center;
+        }
+
+        .square1 {
+            animation-delay: 0s;
+            background-color: #051937;
+        }
+
+        .square2 {
+            background-color: #004d7a;
+            animation-delay: 0.5s;
+        }
+
+        .square3 {
+            background-color: #008793;
+            animation-delay: 1s;
+        }
+
+        .square4 {
+            background-color: #00bf72;
+            animation-delay: 1.5s;
+        }
+
+        .square5 {
+            background-color: #a8eb12;
+            animation-delay: 2.0s;
+        }
+
+        .square6 {
+            animation-delay: 2.5s;
+            background-color: #e4ff33;
+
+        }
+
+        @keyframes ghostWalk {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 0;
+                background-background-color: transparent;
+                /* scale: 0.05; */
+            }
+
+
+
+            5% {
+                opacity: 0.75;
+                /* transform: translateX(-50vw) rotate(-500deg); */
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                /* scale: 2.5; */
+                transform: translateX(-105vw) rotate(-5000deg);
+                /* background-background-color: #3498db; */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square square1">
+        <div class="circle"></div>
+    </div>
+    <div class="square square2">
+        <div class="circle"></div>
+    </div>
+    <div class="square square3">
+        <div class="circle"></div>
+    </div>
+    <div class="square square4">
+        <div class="circle"></div>
+    </div>
+    <div class="square square5">
+        <div class="circle"></div>
+    </div>
+    <div class="square square6">
+        <div class="circle"></div>
+    </div>
+</body>
+
+</html>
