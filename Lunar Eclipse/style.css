@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #000000b8, #000000b8), url(nightsky.avif);
+    /* background-color: black; */
+    /* filter: grayscale(100%); */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: skychange 10s ease-in infinite;
+}
+
+.universe {
+
+    background-color: transparent;
+    width: 500px;
+    height: 500px;
+}
+
+.moon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 255, 250);
+    /* moon core color */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+        0 0 60px 20px rgba(255, 250, 250, 0.1);
+    animation: moonrays 10s linear infinite;
+
+
+    &::after {
+        content: "";
+        width: inherit;
+        aspect-ratio: 1;
+        background-color: black;
+        /* moon core color */
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* translate: 110px; */
+        animation: moonwalk 10s ease-in-out infinite;
+        /* display: none; */
+    }
+}
+
+@keyframes moonwalk {
+    0% {
+        translate: 110px;
+    }
+
+    50% {
+        translate: 0px;
+        scale: 0.998;
+    }
+
+    100% {
+        translate: -110px;
+    }
+}
+
+@keyframes moonrays {
+    0% {
+        box-shadow:
+            0 0 60px 20px rgba(255, 250, 250, 0.8);
+    }
+
+    25% {
+        box-shadow: 0 0 60px 20px rgba(255, 250, 250, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 60px 20px rgba(255, 250, 250, 0.1);
+    }
+
+    75% {
+        box-shadow:
+            0 0 60px 20px rgba(255, 250, 250, 0.6);
+
+    }
+
+    100% {
+        box-shadow: 0 0 60px 20px rgba(255, 250, 250, 0.8);
+
+    }
+}
+
+@keyframes skychange {
+    0% {
+        background-image: linear-gradient(to bottom, #000000b8, #000000b8), url(nightsky.avif)
+    }
+
+    25% {
+        background-image: linear-gradient(to bottom, #000000b0, #000000b0), url(nightsky.avif)
+    }
+
+    50% {
+        background-image: linear-gradient(to bottom, #000000a8, #000000a8), url(nightsky.avif)
+    }
+
+    75% {
+        background-image: linear-gradient(to bottom, #000000b0, #000000b0), url(nightsky.avif)
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom, #000000b8, #000000b8), url(nightsky.avif)
+    }
+}
